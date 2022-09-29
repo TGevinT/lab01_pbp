@@ -6,9 +6,11 @@
 
 {% block content %}
 
-<div class = "login">
-
-    <h1>Login</h1>
+<div class="login" style="max-width: 300px; min-height: 400px; margin: 80px auto; padding: 40px 30px 30px 30px;
+background-color: #ecf0f3; border-radius: 15px; box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;">
+    <div class="text-center mt-4 name">
+        Login
+    </div>
 
     <form method="POST" action="">
         {% csrf_token %}
