@@ -1,18 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h5>Nama: </h5>
-<p>{{nama}}</p>
-
-<table>
-    <tr>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container"> 
+        <img src="https://w0.peakpx.com/wallpaper/1013/916/HD-wallpaper-black-clover-asta-black-bull-black-clover-logo.jpg" alt="..." width="50" height="60">
+      <a class="navbar-brand" href="#">Wishlist {{nama}}</a>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'wishlist:logout' %}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<br/>
+<table class="table table-bordered table-hover">
+    <tr class="table-secondary" style= "text-align: center;">
     <th>Nama Barang</th>
     <th>Harga Barang</th>
     <th>Deskripsi</th>
     </tr>
     {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
     {% for barang in list_barang %}
-    <tr>
+    <tr style= "text-align: center;">
         <th>{{barang.nama_barang}}</th>
         <th>{{barang.harga_barang}}</th>
         <th>{{barang.deskripsi}}</th>
